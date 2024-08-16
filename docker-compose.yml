@@ -1,28 +1,15 @@
-version: '3.8'
-
+version: "3.3"
 services:
   prometheus:
-    image: prom/prometheus:v2.32.1
-    container_name: prometheus
+    image: prom/prometheus:latest
     volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./monitoring/:/etc/prometheus/
     ports:
-      - ":9090"
-
+      - :9090
   grafana:
-    image: grafana/grafana:8.3.3
-    container_name: grafana
+    image: grafana/grafana:latest
+    volumes:
+      - ./monitoring/datasources.yml:/etc/grafana/provisioning/datasources/datasources.yml
     ports:
-      - ":3000"
-    depends_on:
-      - prometheus
-    environment:
-      - GF_SECURITY_ADMIN_PASSWORD=admin  # Set Grafana admin password
-
-  my-app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: my-app
-    ports:
-      - ":9000"
+      - :3000
+   
