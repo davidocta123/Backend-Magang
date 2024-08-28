@@ -2,7 +2,7 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 jobs:
 
@@ -16,9 +16,9 @@ jobs:
       env:
         DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-      run: docker login -u $davidocta154 -p $senyumboyolali
+      run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 
     - name: Build the Docker image
       run: docker build -t backend-magang .
     - name: Push to Dockerhub
-      run: docker push davidocta154/backend-magang:latest
+      run: docker push davidocta093/backend-magang:latest
