@@ -21,4 +21,4 @@ jobs:
     - name: Build the Docker image
       run: docker build -t backend-magang .
     - name: Push to Dockerhub
-      run: docker push davidocta093/backend-magang:latest
+      run: docker push davidocta093/backend-magang:tagname
