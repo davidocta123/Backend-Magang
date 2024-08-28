@@ -12,11 +12,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Login Dockerhub
+    - name: Login dockerhub
       env:
         DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-      run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+      run: echo "$password" | docker login -u "$username" --password-stdin
 
     - name: Build the Docker image
       run: docker build -t backend-magang .
