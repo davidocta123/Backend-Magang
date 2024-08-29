@@ -19,6 +19,6 @@ jobs:
       run: docker login -u $davidocta154 -p $davidocta123
 
     - name: Build the Docker image
-      run: docker build -t dev-ops .
+      run: docker build -t backend-magang .
     - name: Push to Dockerhub
-      run: docker push davidocta154/dev-ops:latest
+      run: docker push davidocta154/backend-magang:latest
