@@ -13,8 +13,6 @@ RUN npm install
 # Salin semua file aplikasi
 COPY . .
 
-# Build file TypeScript (jika diperlukan)
-RUN npm run build
 
 # Buka port yang digunakan aplikasi
 EXPOSE 9000
