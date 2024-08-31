@@ -18,7 +18,16 @@ jobs:
         davidocta123: ${{secrets.davidocta123}}
       run: docker login -u $davidocta154 -p $davidocta123
 
-    - name: Build the Docker image
-      run: docker build -t backend-magang .
-    - name: Push to Dockerhub
-      run: docker push davidocta154/backend-magang:latest
+    - name: Extract metadata (tags, labels) for Docker
+      id: meta
+      uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+      with:
+        images: davidocta154/backend-magang
+    
+    - name: Build and push Docker image
+      uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+      with:
+        context: .
+        push: true
+        tags: ${{ steps.meta.outputs.tags }}
+        labels: ${{ steps.meta.outputs.labels }}
