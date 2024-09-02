@@ -18,4 +18,4 @@ jobs:
     - name: Delete Old docker container
       run: sudo docker rm -f backend-magang-container || true
     - name: Run Docker Container
-      run: sudo docker run -d -p 8080:8080 --name backend-magang-container davidocta154/backend-magangd
+      run: sudo docker run -d -p 8080:8080 --name backend-magang-container davidocta154/backend-magang
