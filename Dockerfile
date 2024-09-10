@@ -15,7 +15,7 @@ COPY . .
 
 
 # Jalankan build aplikasi (misalnya menggunakan webpack atau tsc)
-RUN npm run build
+RUN npm build
 
 CMD ["npm", "run", "start"]
 
