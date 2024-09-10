@@ -17,11 +17,11 @@ COPY . .
 # Jalankan build aplikasi (misalnya menggunakan webpack atau tsc)
 RUN npm build
 
-CMD ["npm", "run", "start"]
+
 
 # CMD ["node", "dist/server.js"]
 # Buka port yang digunakan aplikasi
 EXPOSE 3000
 
 # Jalankan aplikasi
-# CMD ["node", "dist/server.js"]
+CMD ["node", "dist/server.js"]
