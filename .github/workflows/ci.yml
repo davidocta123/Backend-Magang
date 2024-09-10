@@ -17,7 +17,7 @@ jobs:
       env:
         davidocta154: ${{secrets.davidocta154}}
         naylaAhsa12: ${{secrets.naylaAhsa12}}
-      run: docker login -u $davidocta154 -p $davidocta123
+      run: docker login -u $davidocta154 -p $naylaAhsa12
 
     - name: Build docker image
       run: docker build -t davidocta154/backend-magang .
