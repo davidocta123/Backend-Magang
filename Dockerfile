@@ -14,10 +14,6 @@ RUN npm install
 COPY . .
 
 
-# Jalankan build aplikasi (misalnya menggunakan webpack atau tsc)
-RUN npm build
-
-
 
 # CMD ["node", "dist/server.js"]
 # Buka port yang digunakan aplikasi
