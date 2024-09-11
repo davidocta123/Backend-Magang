@@ -3,7 +3,7 @@ import promClient, { collectDefaultMetrics, Registry } from 'prom-client';
 import { Request, Response } from 'express';
 
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 // Create a new registry
 const register = new Registry();
