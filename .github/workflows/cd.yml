@@ -14,7 +14,7 @@ jobs:
 
     steps:
     - name: Pull Docker image
-      run: sudo docker pull davidocta154/backend-magan:latest
+      run: docker pull davidocta154/backend-magan:latest
     - name: Delete Old docker container
       run: sudo docker rm -f backend-magang-container || true
     - name: Run Docker Container
