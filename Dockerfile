@@ -18,7 +18,7 @@ COPY . .
 # CMD ["node", "dist/server.js"]
 RUN tsc
 # Buka port yang digunakan aplikasi
-EXPOSE 3000
+EXPOSE 8080
 
 # Jalankan aplikasi
 CMD ["node", "dist/server.js"]
