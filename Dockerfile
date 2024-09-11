@@ -9,13 +9,14 @@ COPY package*.json ./
 
 # Install dependensi proyek
 RUN npm install
-
+RUN npm install -g typescript
 # Salin semua file aplikasi
 COPY . .
 
 
 
 # CMD ["node", "dist/server.js"]
+RUN tsc
 # Buka port yang digunakan aplikasi
 EXPOSE 3000
 
